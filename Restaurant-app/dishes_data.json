@@ -1,0 +1,16 @@
+{
+    "name": "Burger Wołowy",
+    "type": "kuchnia amerykańska",
+    "category": "danie obiadowe",
+    "ingedients": [
+        "papryka",
+        "sałata",
+        "pomidor"
+    ],
+    "max_number_per_day": 12,
+    "price": 13.20,
+    "description": "Soczysty burger",
+    "link": "dupa"
+  }
+
+  

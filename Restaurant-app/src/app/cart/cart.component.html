@@ -1,0 +1,31 @@
+<div class = "container">
+    <div id="books"#books>
+        <div *ngFor="let obj of orders" class="book">
+            
+            
+            <div class = 'data'>
+                <div class = "name text">{{obj.dish?.name}}</div>
+                <div class = "price text">Cena: {{obj.dish?.price}}zł</div>
+            </div>
+
+            <img class = "images" src={{obj.dish?.link}} />
+            <div class = "number text">Liczba: {{obj.number}}szt.</div>
+
+            <button (click)="remove(obj.id)">
+                <span class="material-symbols-outlined">
+                    delete
+                </span>
+            </button>      
+        </div>
+    </div>
+
+    <div *ngIf="orders.length == 0" class="empty">
+        Koszyk jest pusty
+    </div>
+
+    <button *ngIf="orders.length != 0" (click)="buy()" class="button">
+        <span class="material-symbols-outlined">
+            paid
+        </span>
+    </button>
+</div>

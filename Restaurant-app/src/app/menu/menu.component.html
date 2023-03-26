@@ -1,0 +1,32 @@
+<div class = "container"> 
+    <div class = "image"></div>
+    <div class = "">
+</div>
+<div class = "container">
+    <div id="books"#books>
+        <div *ngFor="let obj of objects" class="book">
+            <div class = "name text">{{obj.name}}</div>
+            <div class = 'data'>
+                <div class = "type text">{{obj.type}}</div>
+                <div class = "category text">{{obj.category}}</div>
+                <div class = "ingredients text">{{obj.ingredients}}</div>
+                <div class = "max_number text">Liczba: {{obj.max_number_per_day}}</div>
+                <div class = "price text">Cena: {{obj.price}} zł</div>
+                <div class = "desription text">{{obj.description}}</div>
+            </div>
+            
+
+            <a [routerLink]="['dish/', obj.id]"><div class = "link">
+                <img class = "images" src={{obj.link}} />
+            </div></a>
+
+            
+            <button (click)="add_to_cart(obj.id)" class = "cart">
+                <span class="material-symbols-outlined">
+                    add_shopping_cart
+                </span>
+            </button>
+            
+    </div>
+</div>
+<!-- <p>menu works!</p> -->

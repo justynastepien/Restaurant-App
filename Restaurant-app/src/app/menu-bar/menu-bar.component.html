@@ -1,0 +1,48 @@
+<div id="container">
+    <h3>Tutto Santo</h3>
+    <div id="nav">
+        <a *ngIf="locked == false" [routerLink]="['registering']">
+            <button class="button">Zarejestruj</button>
+        </a>
+        <a *ngIf="locked == false" [routerLink]="['logging']">
+            <button class="button">Zaloguj</button>
+        </a>
+        <a *ngIf="locked == true" [routerLink]="['loggout/', token]">
+            <button (click) = "logout()" class="button">Wyloguj</button>
+        </a>
+        <a [routerLink]="['glowna']">
+            <button class="button">Strona Główna</button>
+        </a>
+        <a [routerLink]="['glowna']">
+            <button class="button">Menu</button>
+        </a>
+        <a *ngIf="forAdmin == true" [routerLink]="['menu-changer']">
+            <button class="button">Modyfikacja Menu</button>
+        </a>
+        <a *ngIf="forUser == true" [routerLink]="['cart/', token]">
+            <button class="button">Koszyk</button>
+        </a>
+    </div>
+    <button id="hamburger" class="button material-symbols-outlined">menu</button>
+    <button id="close" class="button material-symbols-outlined">close</button>
+    <div id="collapsedNav">
+        <a *ngIf="locked == false" [routerLink]="['registering']">
+            <button class="button buttonC">Zarejestruj</button>
+        </a>
+        <a *ngIf="locked == false" [routerLink]="['logging']">
+            <button class="button buttonC">Zaloguj</button>
+        </a>
+        <a [routerLink]="['glowna']">
+            <button class="button buttonC">Strona Główna</button>
+        </a>
+        <a [routerLink]="['glowna']">
+            <button class="button buttonC">Menu</button>
+        </a>
+        <a *ngIf="forAdmin == true" [routerLink]="['menu-changer']">
+            <button class="button buttonC">Modyfikacja Menu</button>
+        </a>
+        <a *ngIf="forUser == true" [routerLink]="['cart/', token]">
+            <button class="button buttonC">Koszyk</button>
+        </a>
+    </div>
+</div>

@@ -1,0 +1,50 @@
+<div class = "container">
+    <div id="books"#books>
+        
+        <div class = "name text">{{dish.name}}</div>
+
+        <div class = "slaider">
+                <div class="left_arrow"></div>
+                <img class = "images" src={{dish.link}} />
+                <div class="right_arrow"></div>
+        </div>
+            
+        <div class = 'data'>
+            <div class = "type text">
+                <div class='text'>Rodzaj:</div>
+                {{dish.type}}
+            </div>
+            <div class = "category text"><div class='text'>Kategoria:</div>{{dish.category}}</div>
+            <div class = "ingredients text"><div class='text'>Składniki:</div>{{dish.ingredients}}</div>
+            <div class = "max_number text"><div class='text'>Maksymalna liczba na dzień:</div>{{dish.max_number_per_day}}</div>
+            <div class = "price text"><div class='text'>Cena:</div>{{dish.price}} zł</div>
+            <div class = "desription text"><div class='text'>Opis:</div>{{dish.description}}</div>
+        </div>
+            
+
+        
+        <div class = "op">Opinie:</div>
+        <div class = 'opinions'>
+            <div *ngFor="let review of reviews">
+                <div class = "name1 text">Użytkownik {{review.user.nick}} napisał:</div>
+                <div class = "rating text">Ocena: {{review.rating}}/5</div>
+                <div class = "content text">{{review.content}}</div>
+            </div>
+        </div>
+        
+        <div *ngIf="forUser == true" class = "form"#form>
+            <div class = "inputs" >
+                Ocena:
+                <input #rating class = "rating" type="number" min="1" max="5">
+            </div>
+            <div class = "inputs">
+                Opis:
+                <textarea #content class = "content" cols="40" rows="5" ></textarea>
+            </div>
+          
+            <div class = "inputs">
+                <button (click)="addReview();" class = "add">Dodaj</button>
+            </div>
+        </div>
+    </div>
+</div>

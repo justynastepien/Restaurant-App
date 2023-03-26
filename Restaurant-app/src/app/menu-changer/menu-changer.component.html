@@ -1,0 +1,66 @@
+<div class = "container">
+    <div id="books"#books>
+        <div *ngFor="let obj of objects" class="book">
+            <div class = "name text">{{obj.name}}</div>
+            <div class = 'data'>
+                <div class = "type text">{{obj.type}}</div>
+                <div class = "category text">{{obj.category}}</div>
+                <div class = "ingredients text">{{obj.ingredients}}</div>
+                <div class = "max_number text">Liczba: {{obj.max_number_per_day}}</div>
+                <div class = "price text">Cena: {{obj.price}}</div>
+                <div class = "desription text">{{obj.description}}</div>
+            </div>
+            
+
+            <div class = "link">
+                <img class = "images" src={{obj.link}} />
+            </div>
+
+            
+            <button (click)="removeDish(obj.id)" class = "cart">
+                <span class="material-symbols-outlined">
+                    delete
+                </span>
+            </button>
+        </div>            
+    </div>
+    <div class = "op">Dodaj potrawę:</div>
+    <div class = "form"#form>
+        <div class = "inputs" >
+            Nazwa:
+            <input #name1 class = "name1" type="text">
+        </div>
+        <div class = "inputs">
+            Typ:
+            <input #type class = "type" type="text">
+        </div>
+        <div class = "inputs">
+            Kategoria:
+            <input #category class = "category" type="text">
+        </div>
+        <div class = "inputs">
+            Składniki:
+            <input #ingredients class = "ingredients" type="text">
+        </div>
+        <div class = "inputs">
+            Max. liczba:
+            <input #max_number class = "max_number" type="number">
+        </div>
+        <div class = "inputs">
+            Cena:
+            <input #price class = "price" type="number">
+        </div>
+        <div class = "inputs">
+            Opis:
+            <input #description class = "description" type="text">
+        </div>
+        <div class = "inputs">
+            Link:
+            <input #link class = "link" type="text">
+        </div>
+      
+        <div class = "inputs">
+            <button (click)="addDish();" class = "add">Dodaj</button>
+        </div>
+    </div>
+</div>

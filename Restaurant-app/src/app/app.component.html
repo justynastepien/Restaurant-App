@@ -1,0 +1,6 @@
+<!-- <app-menu-bar></app-menu-bar> -->
+<!-- <app-menu [objects] = 'objectsList'></app-menu> -->
+<!-- <app-one-dish [callbackRequest]="callbackFunction"></app-one-dish> -->
+<!-- <router-outlet ></router-outlet> -->
+<router-outlet (activate)="onOutletLoaded($event)" name="secondary"></router-outlet>
+<router-outlet (activate)="onOutletLoaded($event)"></router-outlet>
